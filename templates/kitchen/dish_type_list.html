@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Dish Types List
+    <a style="float: right" href="{% url 'kitchen:dish-type-create' %}">Create</a>
+    </h1>
+    {% if dish_type_list %}
+      <ul>
+      {% for dish_type in dish_type_list %}
+          <li>{{ dish_type.name}}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>There are no Dish Types in the Kitchen</p>
+    {% endif %}
+
+{% endblock %}

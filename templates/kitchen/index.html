@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Kitchen</h1>
+  <h2>Welcome to the Best Kitchen!</h2>
+  <p>
+Delicious food is a pleasure that should not be refused. Receiving pleasant emotions in your favorite restaurant is also a special kind of pleasure.</p>
+  <p>The best dishes for you:</p>
+  <ul>
+    <li><strong>Dishes:</strong> {{ num_dishes }}</li>
+    <li><strong>Cooks:</strong> {{ num_cooks }}</li>
+    <li><strong>DishType:</strong> {{ num_dish_types }}</li>
+  </ul>
+
+  <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
+  </p>
+{% endblock%}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Dish list
+    <a style="float: right"  href="{%  url 'kitchen:dish-create' %}">Create</a>
+  </h1>
+  {% if dish_list %}
+      <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for dish in dish_list %}
+            <tr>
+                <td>
+                    {{dish.id }}
+                </td>
+                <td>
+                    {{ dish.name }}
+                </td>
+                <td>
+                    <a href="{% url "kitchen:dish-update" pk=dish.id %}">UPDATE</a>
+                </td>
+                <td>
+                    <a href="{% url "kitchen:dish-delete" pk=dish.id %}">DELETE</a>
+                </td>
+            </tr>
+        {% endfor %}
+      </table>
+
+  {% else %}
+    <p>There are no dishes in the kitchen</p>
+  {% endif %}
+{% endblock %}
