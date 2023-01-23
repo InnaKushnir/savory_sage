@@ -7,6 +7,7 @@ from rest_framework.reverse import reverse_lazy
 
 from kitchen.models import Cook, Dish, DishType
 
+
 @login_required
 def index(request):
     num_cooks = Cook.objects.count()

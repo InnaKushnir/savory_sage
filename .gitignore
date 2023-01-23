@@ -7,3 +7,4 @@ venv/
 .pytest_cache/
 **__pycache__/
 /django-debug-toolbar
+db.sqlite3
