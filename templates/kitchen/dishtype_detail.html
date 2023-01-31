@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p>Dish Type: ({{ dishtype.name }})</p>
+
+  <h1>{{ dishtype.name }}</h1>
+  <h4>Dishes</h4>
+  <hr>
+  <ul>
+  {% for dish in dishtype.dishes.all %}
+    <a  href="{% url 'kitchen:dish-detail' pk=dish.id %}" ><li>{{ dish.name }}</li></a>
+  {% endfor %}
+  </ul>
+{% endblock %}

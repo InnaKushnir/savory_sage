@@ -2,11 +2,11 @@
 
 {% block content %}
     <h1>Cook List
-
+      <a style="float: right" href="{% url 'kitchen:cook-create' %}"><h3>Add cook</h3></a>
     </h1>
 
     {% if cook_list %}
-    <table class="table">
+    <table class="table table-hover">
       <tr>
         <th>ID</th>
         <th>Username</th>
@@ -17,7 +17,7 @@
     {% for cook in cook_list %}
       <tr>
         <td>{{ cook.id }}</td>
-        <td>{{ cook.username }}</td>
+        <td><a href="{% url "kitchen:cook-detail" pk=cook.id %}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a></td>
         <td>{{ cook.first_name }}</td>
         <td>{{ cook.last_name }}</td>
         <td>{{ cook.years_of_experience }}</td>

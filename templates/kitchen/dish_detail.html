@@ -2,11 +2,14 @@
 
 {% block content %}
   <p>Dish Type: ({{ dish.dish_type.name }})</p>
-  <h1>Cooks</h1>
+  <h3><a style="float: right" href="{% url 'kitchen:dish-update' pk=dish.id %}">Edit</a></h3>
+  <h1>Dish: {{ dish.name }}</h1>
+  <h4>Cook</h4>
   <hr>
   <ul>
   {% for cook in dish.cooks.all %}
-    <li>{{ cook.username }} ({{ cook.first_name }} {{ cook.last_name }})</li>
+    <li>{{ cook.first_name }} {{ cook.last_name }}
+      ({{ cook.username }})</li>
   {% endfor %}
   </ul>
 {% endblock %}

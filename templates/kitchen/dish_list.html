@@ -4,8 +4,12 @@
   <h1>Dish list
     <a style="float: right"  href="{%  url 'kitchen:dish-create' %}">Create</a>
   </h1>
+
+  <form action="" method="get">
+  {{ search_form.as_p }}
+  </form>
   {% if dish_list %}
-      <table class="table">
+      <table class="table table-hover">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -18,7 +22,7 @@
                     {{dish.id }}
                 </td>
                 <td>
-                    {{ dish.name }}
+                    <a href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.name }}</a>
                 </td>
                 <td>
                     <a href="{% url "kitchen:dish-update" pk=dish.id %}">UPDATE</a>

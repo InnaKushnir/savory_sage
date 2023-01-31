@@ -1,18 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
- <p><strong>
-    {{ cook.first_name }} {{ cook.last_name }}.</strong>
-    years_of_experience: {{ cook.years_of_experience }}
-  </p>
-  {% for dish in cook.dishes.all %}
-    <hr>
-    <p><strong>Id:</strong>{{ dish.id }}
-      <strong>Dish :</strong> {{ dish.name }}
-    </p>
+  <h1>
+    Username: {{ cook.username }}
+    <a href="{% url 'kitchen:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
 
-  {% empty %}
-    <p>No dishes!</p>
-  {% endfor %}
+    <a href="{% url 'kitchen:cook-update' pk=cook.id  %}" class="btn btn-secondary link-to-page">
+      Update info
+    </a>
+  </h1>
 
+  <p><strong>First name:</strong> {{ cook.first_name }}</p>
+  <p><strong>Last name:</strong> {{ cook.last_name }}</p>
+  <p><strong>years_of_experience:</strong> {{ cook.years_of_experience }}</p>
+  <p><strong>Is staff:</strong> {{ cook.is_staff }}</p>
+
+  <div class="ml-3">
+    <h4>Dishes</h4>
+
+    {% for dish in cook.dishes.all %}
+        <hr>
+        <p><strong>Name:</strong> {{ dish.name }}</p>
+        <p><strong>Dish Type:</strong> {{ dish.dish_type.name }}</p>
+        <p class="text-muted"><strong>Id:</strong> {{dish.id}}</p>
+
+    {% empty %}
+      <p>No dishes!</p>
+    {% endfor %}
+  </div>
 {% endblock %}

@@ -6,3 +6,8 @@ body {
     padding: 0;
     list-style: none;
 }
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
