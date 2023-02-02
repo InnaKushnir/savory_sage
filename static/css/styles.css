@@ -10,7 +10,7 @@ img {
 }
 .container {
     width: 1170px;
-    margin: 20px;
+    margin: auto;
 }
 
 header .navbar-brand{
@@ -34,10 +34,5 @@ header .nav-item a::after{
 .img-fluid {
     height: auto;
     max-width: 100%;
-    margin: auto;
-}
-
-.wrapper {
-    justify-content: center;
     margin: auto;
 }

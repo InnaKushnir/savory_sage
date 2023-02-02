@@ -4,7 +4,7 @@
   <p>Dish Type: ({{ dish.dish_type.name }})</p>
   <h3><a style="float: right" href="{% url 'kitchen:dish-update' pk=dish.id %}">Edit</a></h3>
   <h1>Dish: {{ dish.name }}</h1>
-  <h4>Cook</h4>
+  <h4>Cooks</h4>
   <hr>
   <ul>
   {% for cook in dish.cooks.all %}
