@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
 
+{% block sidebar %}
+        {% include "includes/sidebar.html" %}
+{% endblock %}
 {% block content %}
     <h1>Dish Types List
-    <a style="float: right" href="{% url 'kitchen:dish-type-create' %}">Create</a>
+    <a style="float: right" href="{% url 'kitchen:dish-type-create' %}">
+      <h3>Create type</h3>
+    </a>
     </h1>
 
     <form action="" method="get" class="form-inline">

@@ -17,16 +17,64 @@
 </head>
 
 <body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-2" style="background-color: navajowhite;">
+ <div class="wrapper">
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Best Kitchen</a>
+      <button class="navbar-toggler" type="button"
+              data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
 
-      {% block sidebar %}
-        {% include "includes/sidebar.html" %}
-      {% endblock %}
-
+        <div class="nav-item">
+          <a class="nav-link" href="{% url 'kitchen:index' %}">Home page</a>
+        </div>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <div>
+          {% if user.is_authenticated %}
+          User: {{ user.username }}
+          <a href="{% url 'logout' %}" class="btn btn-secondary" role="btn" >Logout</a>
+        </div>
+        <div>
+          {%  else %}
+          <a href="{% url 'login' %}" class="btn btn-secondary" role="btn">Login</a>
+          {% endif %}
+        </div>
+      </form>
+      </div>
+    </nav>
     </div>
-    <div class="col-sm-10" style="background-color: papayawhip;">
+  </header>
+  <div class="container">
+    <div class="jumbotron">
+      <div class="center-block">
+        <img src="/static/kitchen/img/assortment-fresh-organic-fruits-vegetables-rainbow-colors-panoramic-food-background-171245196.jpg"
+            class="img-fluid" alt="Responsive image" >
+        <br>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<div class="container">
+
+
+  <br>
+
+    <div class="col inner-row" style="background-color: #f5f5f5;">
+      <div class="d-flex justify-content-around">
+        <div ><a href="{% url 'kitchen:cook-list' %}"><h3>Cooks</h3></a></div>
+        <div ><a href="{% url 'kitchen:dish-list' %}"><h3>Dishes</h3></a></div>
+        <div ><a href="{% url 'kitchen:dish-type-list' %}"><h3>DishTypes</h3></a></div>
+      </div>
 
       {% block content %}{% endblock %}
 
@@ -34,9 +82,11 @@
           {% include "includes/pagination.html" %}
       {% endblock %}
 
+
     </div>
+
   </div>
-</div>
+ </div>
 </body>
 
 </html>

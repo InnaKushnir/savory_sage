@@ -1,13 +1,43 @@
 body {
     margin-top: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
 }
 
-.sidebar-title {
-    padding: 0;
-    list-style: none;
+img {
+    max-width: 100%;
+    height: auto;
 }
-
 .container {
     width: 1170px;
-    margin: 0 auto;
+    margin: 20px;
+}
+
+header .navbar-brand{
+    font-family: 'Inconsolata', monospace;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+header .nav-item {
+    margin-left: 50px;
+}
+
+header .nav-item a::after{
+    content: "";
+    display: block;
+    width: 100%;
+    background-color: #ccc;
+    height: 1px;
+}
+
+.img-fluid {
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+}
+
+.wrapper {
+    justify-content: center;
+    margin: auto;
 }

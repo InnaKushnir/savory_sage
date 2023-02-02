@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Cook List
-      <a style="float: right" href="{% url 'kitchen:cook-create' %}"><h3>Add cook</h3></a>
+  <a style="float: right" href="{% url 'kitchen:cook-create' %}"><h3>Add cook</h3></a>
+  <h1 style="text-align: center">Cook List
+
     </h1>
+
 
     {% if cook_list %}
     <table class="table table-hover">
