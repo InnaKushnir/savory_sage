@@ -7,13 +7,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('kitchen', '0002_alter_cook_years_of_experience'),
+        ("kitchen", "0002_alter_cook_years_of_experience"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='dish',
-            name='cooks',
-            field=models.ManyToManyField(related_name='dishes', to=settings.AUTH_USER_MODEL),
+            model_name="dish",
+            name="cooks",
+            field=models.ManyToManyField(
+                related_name="dishes", to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]

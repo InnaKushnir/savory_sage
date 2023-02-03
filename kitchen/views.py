@@ -6,7 +6,12 @@ from django.shortcuts import render
 from django.views import generic
 from rest_framework.reverse import reverse_lazy
 
-from kitchen.forms import CookCreationForm, DishTypeSearchForm, DishForm, CookInfoUpdateForm
+from kitchen.forms import (
+    CookCreationForm,
+    DishTypeSearchForm,
+    DishForm,
+    CookInfoUpdateForm,
+)
 from kitchen.models import Cook, Dish, DishType
 
 
@@ -22,8 +27,7 @@ def index(request):
         "num_dish_types": num_dish_types,
     }
 
-    return render(request, "kitchen/index.html",
-                  context=context)
+    return render(request, "kitchen/index.html", context=context)
 
 
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
@@ -37,9 +41,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = DishTypeSearchForm(
-            initial={"name": name}
-        )
+        context["search_form"] = DishTypeSearchForm(initial={"name": name})
 
         return context
 
