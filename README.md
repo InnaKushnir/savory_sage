@@ -17,7 +17,7 @@ Django kitchen management project
 * Password: `2105Inna75`
 
 #### Demo
-![Kitchen_project](photo_5395708255541511890_y.jpg)
+![Kitchen_project](kitchen-photo.jpg)
 
 #### Installation
 ##### Python3 must be already installed.
