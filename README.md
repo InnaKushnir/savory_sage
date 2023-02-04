@@ -17,7 +17,7 @@ Django kitchen management project
 * Password: `2105Inna75`
 
 #### Demo
-![Kitchen_project](kitchen-photo.jpg)
+![Kitchen_project](static/kitchen/img/kitchen-photo.jpg)
 
 #### Installation
 ##### Python3 must be already installed.
@@ -32,6 +32,8 @@ python -m venv venv
 source venv/bin/activate
 
 pip install -r requirements.txt
+
+python manage.py migrate
 
 python manage.py runserver 
 ```
