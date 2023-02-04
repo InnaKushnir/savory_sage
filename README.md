@@ -3,7 +3,7 @@ Django kitchen management project
 
 #### Checkout it
 
-[Kitchen service project deployed to Render](link)
+[Kitchen service project deployed to Render](https://kitchen-project.onrender.com/)
 
  #### Features
 
