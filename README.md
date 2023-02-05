@@ -39,15 +39,14 @@ python manage.py runserver
 ```
 ##### Create .env file with values:
 
-##### set :for Windows, export: for Linux
 ```
-set DB_HOST=<your db hostname>
+DB_HOST=<your db hostname>
 
-set DB_NAME=<your db name>
+DB_NAME=<your db name>
 
-set DB_USER=<your db username>
+DB_USER=<your db username>
 
-set DJANGO_SECRET_KEY=<your django secret key>
+DB_PASSWORD=<your db user password>
 
-set DB_PASSWORD=<your db user password>
+DJANGO_SECRET_KEY=<your django secret key>
 ```
