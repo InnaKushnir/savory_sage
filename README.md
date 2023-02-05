@@ -33,6 +33,14 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
+python manage.py migrate
+
+python manage.py runserver 
+```
+##### Create .env file with values:
+
+##### set :for Windows, export: for Linux
+```
 set DB_HOST=<your db hostname>
 
 set DB_NAME=<your db name>
@@ -42,8 +50,4 @@ set DB_USER=<your db username>
 set DJANGO_SECRET_KEY=<your django secret key>
 
 set DB_PASSWORD=<your db user password>
-
-python manage.py migrate
-
-python manage.py runserver 
 ```
