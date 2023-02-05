@@ -39,6 +39,8 @@ set DB_NAME=<your db name>
 
 set DB_USER=<your db username>
 
+set DJANGO_SECRET_KEY=<your django secret key>
+
 set DB_PASSWORD=<your db user password>
 
 python manage.py migrate
